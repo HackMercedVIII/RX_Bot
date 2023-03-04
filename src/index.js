@@ -1,6 +1,8 @@
-const { Client, Collection, Events, GatewayIntentBits } = require("discord.js")
+const { Client, Collection, EmbedBuilder, Events, GatewayIntentBits } = require("discord.js")
 const Discord = require("discord.js")
 const dotenv = require('dotenv').config()
+const { request } = require('undici');
+const axios = require("axios");
 const fs = require('node:fs');
 const path = require('node:path');
 
@@ -34,36 +36,15 @@ for (const file of commandFiles) {
 const eventsPath = path.join(__dirname, '../events');
 const eventFiles = fs.readdirSync(eventsPath).filter(file => file.endsWith('.js'));
 
-// for (const file of eventFiles) {
-// 	const filePath = path.join(eventsPath, file);
-// 	const event = require(filePath);
-// 	if (event.once) {
-// 		client.once(event.name, (...args) => event.execute(...args));
-// 	} else {
-// 		client.on(event.name, (...args) => event.execute(...args));
-// 	}
-// }
-
-client.on(Events.InteractionCreate, async interaction => {
-	if (!interaction.isChatInputCommand()) return;
-  // message = await interaction.reply;
-  // if (message.author.bot) return;
-  
-
-	const command = client.commands.get(interaction.commandName);
-
-	if (!command) return;
-
-	try {
-		await command.execute(interaction);
-	} catch (error) {
-		console.error(error);
-		if (interaction.replied || interaction.deferred) {
-			await interaction.followUp({ content: 'There was an error while executing this command!', ephemeral: true });
-		} else {
-			await interaction.reply({ content: 'There was an error while executing this command!', ephemeral: true });
-		}
+for (const file of eventFiles) {
+	const filePath = path.join(eventsPath, file);
+	const event = require(filePath);
+	if (event.once) {
+		client.once(event.name, (...args) => event.execute(...args));
+	} else {
+		// client.on(event.name, (...args) => event.execute(...args));
 	}
-});
+}
+
 
 client.login(TOKEN);
