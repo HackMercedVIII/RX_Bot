@@ -6,7 +6,7 @@ const axios = require("axios");
 const fs = require('node:fs');
 const path = require('node:path');
 
-const TOKEN =  process.env.DISCORD_TOKEN;
+const TOKEN = process.env.DISCORD_TOKEN;
 const clientID = process.env.clientID;
 const guildID = process.env.guildID;
 
@@ -43,6 +43,30 @@ for (const file of eventFiles) {
 		client.once(event.name, (...args) => event.execute(...args));
 	} else {
 		// client.on(event.name, (...args) => event.execute(...args));
+<<<<<<< HEAD
+=======
+	}
+}
+
+client.on(Events.InteractionCreate, async interaction => {
+	if (!interaction.isChatInputCommand()) return;
+  // message = await interaction.reply;
+  // if (message.author.bot) return;
+  
+	const command = client.commands.get(interaction.commandName);
+
+	if (!command) return;
+
+	try {
+		await command.execute(interaction);
+	} catch (error) {
+		console.error(error);
+		if (interaction.replied || interaction.deferred) {
+			await interaction.followUp({ content: 'There was an error while executing this command!', ephemeral: true });
+		} else {
+			await interaction.reply({ content: 'There was an error while executing this command!', ephemeral: true });
+		}
+>>>>>>> 7bc5d19068844450cf0b59ad56621cfe9584a6bf
 	}
 }
 
