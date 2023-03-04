@@ -43,8 +43,6 @@ for (const file of eventFiles) {
 		client.once(event.name, (...args) => event.execute(...args));
 	} else {
 		// client.on(event.name, (...args) => event.execute(...args));
-<<<<<<< HEAD
-=======
 	}
 }
 
@@ -66,9 +64,8 @@ client.on(Events.InteractionCreate, async interaction => {
 		} else {
 			await interaction.reply({ content: 'There was an error while executing this command!', ephemeral: true });
 		}
->>>>>>> 7bc5d19068844450cf0b59ad56621cfe9584a6bf
 	}
-}
+});
 
 
 client.login(TOKEN);
