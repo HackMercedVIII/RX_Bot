@@ -4,7 +4,7 @@ const dotenv = require('dotenv').config()
 const fs = require('node:fs');
 const path = require('node:path');
 
-const TOKEN =  process.env.DISCORD_TOKEN;
+const TOKEN = process.env.DISCORD_TOKEN;
 const clientID = process.env.clientID;
 const guildID = process.env.guildID;
 
@@ -34,22 +34,21 @@ for (const file of commandFiles) {
 const eventsPath = path.join(__dirname, '../events');
 const eventFiles = fs.readdirSync(eventsPath).filter(file => file.endsWith('.js'));
 
-// for (const file of eventFiles) {
-// 	const filePath = path.join(eventsPath, file);
-// 	const event = require(filePath);
-// 	if (event.once) {
-// 		client.once(event.name, (...args) => event.execute(...args));
-// 	} else {
-// 		client.on(event.name, (...args) => event.execute(...args));
-// 	}
-// }
+for (const file of eventFiles) {
+	const filePath = path.join(eventsPath, file);
+	const event = require(filePath);
+	if (event.once) {
+		client.once(event.name, (...args) => event.execute(...args));
+	} else {
+		// client.on(event.name, (...args) => event.execute(...args));
+	}
+}
 
 client.on(Events.InteractionCreate, async interaction => {
 	if (!interaction.isChatInputCommand()) return;
   // message = await interaction.reply;
   // if (message.author.bot) return;
   
-
 	const command = client.commands.get(interaction.commandName);
 
 	if (!command) return;
