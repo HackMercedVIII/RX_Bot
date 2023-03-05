@@ -41,8 +41,7 @@ Coding Languages - CSS, HTML, JavaScript,
 
 ## :rocket: What's next for RX_Bot
 
-write here
-
+-We plan to finish implementing the search feature to the bot but do not have plans to continue after that.
 
 ## :brain: The team
 
