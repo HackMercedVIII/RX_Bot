@@ -43,6 +43,7 @@ module.exports = {
 
         const options = {
             method: 'GET',
+            responseType: 'json',
             url: 'https://drug-info-and-price-history.p.rapidapi.com/1/druginfo',
             params: {drug: a},
             headers: {
@@ -50,21 +51,29 @@ module.exports = {
                 'X-RapidAPI-Host': 'drug-info-and-price-history.p.rapidapi.com'
             }
         };
+
         var temp = ''
 
         axios.request(options).then(function (response) {
             temp = response.data
-            console.log(temp);
+            console.log(response.data)
+            fs.writeFile("temp.txt", temp, (err) => {
+                if (err)
+                  console.log(err);
+                else {
+                  console.log("File written successfully\n");
+                }
+            });
         }).catch(function (error) {
             console.error(error);
         });
 
-        fs.writeFile("temp.txt", temp, (err) => {
-            if (err)
-              console.log(err);
-            else {
-              console.log("File written successfully\n");
-            }
-          });
+        // fs.writeFile("temp.txt", temp, (err) => {
+        //     if (err)
+        //       console.log(err);
+        //     else {
+        //       console.log("File written successfully\n");
+        //     }
+        //   });
     }
 };
