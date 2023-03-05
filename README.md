@@ -1,5 +1,7 @@
 # RX_Bot
 
+<a href="https://hackmercedviii-rx-bot.webflow.io/" target"_blank">Website</a>
+
 ## :star: Inspiration
 
 -We were inspired by the API called Drug Info and Price History by Robert Nelson.
@@ -50,6 +52,5 @@ Coding Languages - CSS, HTML, JavaScript,
 <a href="https://github.com/leskendrick828" target="_blank">Lester Ra Kendrick</a>
 <hr>
 <a href="https://github.com/FlyinPandaa" target="_blank">Michael Fang</a>
-
 
 
