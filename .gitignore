@@ -24,3 +24,6 @@ env.bak/
 venv.bak/
 token.txt
 config.py
+
+# Temporary files
+temp.txt
