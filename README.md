@@ -1,5 +1,3 @@
-<<<<<<< HEAD
-=======
 # RX_Bot
 
 ## :star: Inspiration
@@ -41,7 +39,6 @@ write here
 <a href="https://github.com/leskendrick828" target="_blank">Lester Ra Kendrick</a>
 <hr>
 <a href="https://github.com/FlyinPandaa" target="_blank">Michael Fang</a>
->>>>>>> c76e21fcb1a1af6cec916dd76d2ebce8e1cb9ff5
 
 
 
