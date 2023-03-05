@@ -1,4 +1,4 @@
-const { SlashCommandBuilder, SlashCommandStringOption } = require('discord.js');
+const { Client, SlashCommandBuilder, SlashCommandStringOption, Collection, EmbedBuilder, GatewayIntentBits } = require('discord.js');
 const axios = require("axios");
 
 module.exports = {
