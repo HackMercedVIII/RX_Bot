@@ -48,8 +48,6 @@ for (const file of eventFiles) {
 
 client.on(Events.InteractionCreate, async interaction => {
 	if (!interaction.isChatInputCommand()) return;
-  // message = await interaction.reply;
-  // if (message.author.bot) return;
   
 	const command = client.commands.get(interaction.commandName);
 
@@ -66,7 +64,5 @@ client.on(Events.InteractionCreate, async interaction => {
 		}
 	}
 });
-
-
 
 client.login(TOKEN);

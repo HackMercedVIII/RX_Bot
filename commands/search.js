@@ -1,5 +1,6 @@
-const { SlashCommandBuilder, SlashCommandStringOption } = require('discord.js');
+const { Client, SlashCommandBuilder, SlashCommandStringOption, Collection, EmbedBuilder, GatewayIntentBits } = require('discord.js');
 const axios = require("axios");
+const fs = require('fs')
 
 module.exports = {
 	data: new SlashCommandBuilder()
@@ -49,12 +50,21 @@ module.exports = {
                 'X-RapidAPI-Host': 'drug-info-and-price-history.p.rapidapi.com'
             }
         };
+        var temp = ''
 
         axios.request(options).then(function (response) {
-            console.log(response.data);
+            temp = response.data
+            console.log(temp);
         }).catch(function (error) {
             console.error(error);
         });
-    }
 
+        fs.writeFile("temp.txt", temp, (err) => {
+            if (err)
+              console.log(err);
+            else {
+              console.log("File written successfully\n");
+            }
+          });
+    }
 };
