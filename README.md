@@ -9,9 +9,9 @@
 ## :dart: What it does
 
 Features: 
-Drug lookup 
-Reminder system for taking medication 
-Drug Refill reminder
+Drug lookup, 
+Reminder system for taking medication, 
+Drug Refill reminder,
 Negative reactions with other drugs
 
 
