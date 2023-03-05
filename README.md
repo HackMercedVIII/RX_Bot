@@ -24,7 +24,7 @@ Coding Languages - CSS, HTML, JavaScript,
 
 ## :stop_sign: Challenges we ran into
 
--Couldn’t figure out how to grab the terminal output and put it into the discord server. The data coming back was in a strange filtype that we couldn't figure out.<br>
+-Couldn’t figure out how to grab the terminal output and put it into the discord server. The data coming back was in a strange filetype that we couldn't figure out.<br>
 -The discord bot kept repeating it self (“Interaction already acknowledge”) when given a command. This was caused by a specific piece of code that, when removed, fixed the issue. We do not understand why.
 
 
