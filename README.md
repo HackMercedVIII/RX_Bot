@@ -1,6 +1,6 @@
 # RX_Bot
 
-<a href="https://hackmercedviii-rx-bot.webflow.io/" target"_blank">Website</a>
+<a href="https://hackmercedviii-rx-bot.webflow.io/" target="_blank">Website</a>
 
 ## :star: Inspiration
 
